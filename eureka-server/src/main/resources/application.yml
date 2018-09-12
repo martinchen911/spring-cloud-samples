@@ -3,13 +3,13 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: localhost       #eureka服务端的实例名称
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: false       #false表示不向注册中心注册自己
+    fetchRegistry: false        #false表示不去检索服务
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/        #设置注册和查询的地址 Eureka 地址
 
 spring:
   application:
-    name: eureka-server
+    name: eureka-server       #项目名称

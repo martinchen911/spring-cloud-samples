@@ -6,6 +6,17 @@ spring:
     name: service-provider
 
 eureka:
-  client:
+  client: #客户端注册进Eureka服务列表内
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: service-provider       #自定义服务名称信息
+    prefer-ip-address: true     #访问路径显示ip地址
+
+#http://ip:8762/actuator/info---项目输出信息
+info:
+   author: martinchen
+   E-mail: martinchen911@outlook.com
+   lastUpdateTime: 2018-9-12
+
+
