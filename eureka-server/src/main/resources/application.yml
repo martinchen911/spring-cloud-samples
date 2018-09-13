@@ -3,12 +3,20 @@ server:
 
 eureka:
   instance:
-    hostname: localhost       #eureka服务端的实例名称
+    #eureka服务端的实例名称
+    hostname: eureka8761.com
   client:
-    registerWithEureka: false       #false表示不向注册中心注册自己
-    fetchRegistry: false        #false表示不去检索服务
+    #false表示不向注册中心注册自己
+    register-with-eureka: false
+    #false表示不去检索服务
+    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/        #设置注册和查询的地址 Eureka 地址
+      #设置注册和查询的地址 Eureka 地址
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #集群配置其它Eureka Server即可
+      defaultZone: http://eureka8761.com:8761/eureka/
+       #,http://eureka8762.com:8762/eureka/
+
 
 spring:
   application:
